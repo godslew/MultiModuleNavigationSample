@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.godslew.multimodulenavigationsample.MainActivity"
+        android:label="MainActivity"
+        tools:layout="@layout/activity_main">
+        <argument
+            android:name="tab"
+            android:defaultValue="Home"
+            app:argType="com.godslew.multimodulenavigationsample.StartTab" />
+    </activity>
+
+    <include app:graph="@navigation/notifications" />
+    <include app:graph="@navigation/dashboard" />
+    <include app:graph="@navigation/home" />
+
+</navigation>
